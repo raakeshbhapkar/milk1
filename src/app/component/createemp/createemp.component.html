@@ -1,0 +1,104 @@
+<form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{panelTitle}}</h3>
+    </div>
+    <div class="panel-body">
+
+      <div class="form-group" [class.has-error]="nameControl.invalid && nameControl.touched">
+        <label for="title" class="control-label">Name</label>
+        <input id="title" required type="text" class="form-control" name="name" [(ngModel)]="name" #nameControl="ngModel">
+        <span class="help-block" *ngIf="nameControl.invalid && nameControl.touched">
+    Name is required
+  </span>
+      </div>
+
+
+      <div class="form-group" [class.has-error]="phonenControl.invalid && phonenControl.touched">
+        <label for="description" class="control-label">Phone</label>
+        <input id="description" required type="text" class="form-control" name="phone" [(ngModel)]="phone" #phonenControl="ngModel">
+        <span class="help-block" *ngIf="phonenControl.invalid && phonenControl.touched">
+   Phone is required
+  </span>
+      </div>
+
+
+      <div class="form-group" [class.has-error]="milkquantityControl.invalid && milkquantityControl.touched">
+        <label for="description" class="control-label"> Milk Quantity </label>
+        <!-- <input id="description" required type="text" class="form-control" name="milkQuantity" [(ngModel)]="milkQuantity" #milkquantityControl="ngModel">
+         -->
+          <select  name="milkQuantity" [(ngModel)]="milkQuantity" #milkquantityControl="ngModel">
+        <option  selected="selected" value="1">1</option>
+          <option value="0.5">0.5</option>
+            <option value="1.5">1.5</option>
+              <option value="2">2</option>
+                <option value="2.5">2.5</option>
+                 <option value="3">3</option>
+                  <option value="3.5">3.5</option>
+                    <option value="4">4</option>
+                      <option value="4.5">4.5</option>
+                        <option value="5">5</option>
+        </select>
+           <span class="help-block" *ngIf="milkquantityControl.invalid && milkquantityControl.touched">
+             Milk Quantity is required
+            </span>
+      </div>
+
+       <div class="form-group" [class.has-error]="milkrateControl.invalid && milkrateControl.touched">
+        <label for="description" class="control-label"> Milk Rate </label>
+        <input id="description" required type="text" class="form-control" name="milkrate" [(ngModel)]="milkrate" #milkrateControl="ngModel">
+        <span class="help-block" *ngIf="milkrateControl.invalid && milkrateControl.touched">
+   Milk Rate is required
+  </span>
+      </div>
+
+ <div class="form-group" [class.has-error]="addressControl.invalid && addressControl.touched">
+        <label for="title" class="control-label">Address</label>
+        <input id="title" required type="text" class="form-control" name="address" [(ngModel)]="address" #addressControl="ngModel">
+        <span class="help-block" *ngIf="addressControl.invalid && addressControl.touched">
+          Address  is required
+        </span>
+ </div>
+  
+
+
+   
+         <div class="form-group" [class.has-error]="apartmentnameControl.invalid && apartmentnameControl.touched">
+        <label for="title" class="control-label">Apartmanrt Name</label>
+        <input id="title" required type="text" class="form-control" name="apartmentName" [(ngModel)]="apartmentName" #apartmentnameControl="ngModel">
+        <span class="help-block" *ngIf="apartmentnameControl.invalid && apartmentnameControl.touched">
+    Apartment Name is required
+  </span>
+      </div>
+  
+       <div class="form-group" [class.has-error]="buildingnumberControl.invalid && buildingnumberControl.touched">
+        <label for="title" class="control-label">Building Number</label>
+        <input id="title" required type="text" class="form-control" name="buildingNumber" [(ngModel)]="buildingNumber" #buildingnumberControl="ngModel">
+        <span class="help-block" *ngIf="buildingnumberControl.invalid && buildingnumberControl.touched">
+    Building Number is required
+  </span>
+      </div>
+
+         <div class="form-group" [class.has-error]="flatnumberControl.invalid && flatnumberControl.touched">
+        <label for="title" class="control-label">Flat Number</label>
+        <input id="title" required type="text" class="form-control" name="flatNumber" [(ngModel)]="flatNumber" #flatnumberControl="ngModel">
+        <span class="help-block" *ngIf="flatnumberControl.invalid && flatnumberControl.touched">
+    Flat Number is required
+  </span>
+      </div>
+  
+  
+
+  
+
+
+
+
+    </div>
+    <div class="panel-footer">
+      <button class="btn btn-primary" [disabled]="employeeForm.invalid" type="submit">Save</button>
+    </div>
+  </div>
+</form>
+<!-- {{employeeForm.value | json}}
+<br/> {{employee | json}} -->

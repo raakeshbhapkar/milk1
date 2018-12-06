@@ -1,0 +1,58 @@
+<!-- <form #employeeFormlist="ngForm" (ngSubmit)="saveEmp(employeeFormlist)"> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+<input matInput #mydatepicker readonly  [(ngModel)]="start_time" name="dateToday" [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</div>
+ <div class="col-md-6">
+  <input type="checkbox" name="selectall" (click)="selectAllFunc($event)"  [checked]="selectall"  [(ngModel)]="selectall"> select All
+</div>
+    </div>
+<div class="row">
+   <div class="col-md-12">
+<table class="table">
+  <thead>
+    <th>Check</th>
+    <th>Name</th>
+     <th>Quantity</th>
+      <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employeeone of employees">
+      <td><input type="checkbox" name="getproduct" [checked]="selectall"  [(ngModel)]="employeeone.checked"></td>
+      <td>{{employeeone.name}}</td>
+      <td>
+        <select name="todayQun" #milkselect  [ngModel]="employeeone.milkQuantity" [(ngModel)]="employeeone.milkToday">
+        <option [selected]="1== employeeone.milkQuantity" value="1">1</option>
+          <option [selected]="0.5 == employeeone.milkQuantity" value="0.5">0.5</option>
+            <option [selected]="1.5 == employeeone.milkQuantity" value="1.5">1.5</option>
+              <option [selected]="2 == employeeone.milkQuantity" value="2">2</option>
+                <option [selected]="2.5 == employeeone.milkQuantity" value="2.5">2.5</option>
+                 <option [selected]="3 == employeeone.milkQuantity" value="3">3</option>
+                  <option [selected]="3.5== employeeone.milkQuantity" value="3.5">3.5</option>
+                    <option [selected]="4 == employeeone.milkQuantity" value="4">4</option>
+                      <option [selected]="4.5 == employeeone.milkQuantity" value="4.5">4.5</option>
+                        <option [selected]="3 == employeeone.milkQuantity" value="5">5</option>
+        </select>
+      </td>
+      
+       <td>
+           <button class="btn btn-primary"  (click)="editEmployee(employeeone)">Edit</button>
+          
+           <button class="btn btn-primary" (click)="viewBillEmployee(employeeone)">View Bill</button>
+           <button style="margin-left:100px;" class="btn btn-danger" (click)="deleteEmployee($event,employeeone)">Delete</button>
+       </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- <form> -->
+
+<button class="btn btn-primary"  (click)="saveEmp(employees)">Save</button>
+</div>
+</div>
+  </div>
+
