@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">rrr
+  <div class="container">
     <div class="navbar-header">
 <!--
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
@@ -14,8 +14,8 @@
     </div>
     <div id="navbar" class="navbar-collapse">
       <ul class="nav navbar-nav">
-        <li routerLinkActive="active"> <a routerLink="list">Empolee List</a></li>
-        <li routerLinkActive="active"> <a [routerLink]="['edit',id]">Create</a></li>
+        <li style="float:left;" routerLinkActive="active"> <a routerLink="list">Empolee List</a></li>
+        <li style="float:left;" routerLinkActive="active"> <a [routerLink]="['edit',id]">Create</a></li>
 
 
       </ul>
@@ -29,7 +29,7 @@
 
 
 
-<div class="container" style="margin-top:130px;">
+<div class="container" style="margin-top:80px;">
   <div class="row">
     <div class="col-md-12">
       <router-outlet></router-outlet>
